@@ -39,7 +39,7 @@ st.pyplot(fig1)
 # Pie Chart
 st.subheader("Proportion of Incidents by Province")
 fig2, ax2 = plt.subplots(figsize=(8,8))
-df.groupby('province')['incident_count'].sum().plot.pie(autopct='%1.1f%%', startangle=120, ax=ax2)
+df.groupby('province')['count'].sum().plot.pie(autopct='%1.1f%%', startangle=120, ax=ax2)
 plt.ylabel('')
 st.pyplot(fig2)
 
@@ -69,11 +69,11 @@ st.markdown("Provinces classified as **Hotspots (1)** indicate high-crime areas 
 # --- Forecasting Section ---
 st.header("📈 Crime Forecasting")
 
-ts_df = df.groupby('financial_year')['incident_count'].sum().reset_index()
+ts_df = df.groupby('financial_year')['count'].sum().reset_index()
 ts_df['year_numeric'] = ts_df['financial_year'].astype(str).str[:4].astype(int)
 
 X = ts_df[['year_numeric']]
-y = ts_df['incident_count']
+y = ts_df['count']
 lr = LinearRegression()
 lr.fit(X, y)
 
@@ -83,7 +83,7 @@ future_preds = lr.predict(future_years.reshape(-1, 1))
 forecast_df = pd.DataFrame({'Year': future_years, 'Predicted Incidents': future_preds})
 
 fig4, ax4 = plt.subplots(figsize=(10,6))
-plt.plot(ts_df['year_numeric'], ts_df['incident_count'], marker='o', label='Actual')
+plt.plot(ts_df['year_numeric'], ts_df['count'], marker='o', label='Actual')
 plt.plot(forecast_df['Year'], forecast_df['Predicted Incidents'], marker='x', linestyle='--', color='red', label='Forecast')
 plt.title('Aggravated Robbery Forecast (Next 5 Years)')
 plt.xlabel('Year')
