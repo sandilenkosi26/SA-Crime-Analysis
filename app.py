@@ -32,7 +32,7 @@ st.header("📊 Exploratory Data Analysis (EDA)")
 # Bar Chart
 st.subheader("Incidents by Province")
 fig1, ax1 = plt.subplots(figsize=(10,6))
-sns.barplot(data=df, x='province', y='incident_count', palette='viridis', ax=ax1)
+sns.barplot(data=df, x='province', y='count', palette='viridis', ax=ax1)
 plt.xticks(rotation=45)
 st.pyplot(fig1)
 
@@ -93,3 +93,4 @@ plt.grid(True)
 st.pyplot(fig4)
 
 st.markdown("The forecast shows projected crime levels for the next 5 years, enabling early planning and resource allocation.")
+
