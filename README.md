@@ -1,12 +1,9 @@
 # 🧠 Crime Hotspot Classification and Forecasting in South Africa
-**Student:** Sandile Nkosi  
-**Module:** Technical Programming II — Final Exam  
-**Institution:** Mangosuthu University of Technology (MUT)  
-**Date:** October 2025  
+
 
 ---
 
-## 📖 Project Overview
+##  Project Overview
 Crime in South Africa remains one of the country’s most pressing social and economic challenges.  
 This project applies **Machine Learning (Classification and Time Series Forecasting)** to identify crime hotspots and predict future crime trends.  
 The goal is to turn raw SAPS statistics into actionable intelligence that can guide **law enforcement** and **policy decisions**.  
@@ -16,7 +13,7 @@ Finally, a **Drone Simulation** was designed to illustrate how autonomous system
 
 ---
 
-## 🗂️ Datasets
+## Datasets
 
 | Dataset Name | Source | Description | Purpose |
 |---------------|---------|-------------|----------|
@@ -31,7 +28,7 @@ Finally, a **Drone Simulation** was designed to illustrate how autonomous system
 
 ---
 
-## 🧹 Data Cleaning and Preparation
+##  Data Cleaning and Preparation
 - Columns were standardized (lowercased, stripped spaces).  
 - Missing values were handled and unnecessary columns removed.  
 - Datasets were merged using the common field `province`.  
@@ -40,7 +37,7 @@ Finally, a **Drone Simulation** was designed to illustrate how autonomous system
 
 ---
 
-## 📊 Exploratory Data Analysis (EDA)
+##  Exploratory Data Analysis (EDA)
 The EDA revealed key insights about aggravated robbery patterns:
 
 - **Bar Chart:** Compared total incidents by province.  
@@ -51,7 +48,7 @@ Provinces such as **Gauteng** and **KwaZulu-Natal** emerged as consistent high-c
 
 ---
 
-## 🤖 Classification Model (Crime Hotspots)
+##  Classification Model (Crime Hotspots)
 - **Model:** Decision Tree Classifier  
 - **Goal:** Predict whether a province qualifies as a **hotspot (1)** or **non-hotspot (0)**  
 - **Features Used:** `population`, `density`, and `incident_count`  
@@ -62,7 +59,7 @@ This classification can help SAPS allocate patrols and resources to the most cri
 
 ---
 
-## 📈 Forecasting Model (Crime Trends)
+##  Forecasting Model (Crime Trends)
 - **Model Used:** Linear Regression  
 - **Goal:** Forecast aggravated robbery incidents for the next 5 years  
 - **Results:** Forecast indicates a potential upward trend in robbery cases, suggesting a need for preventive strategies.  
@@ -70,7 +67,7 @@ This classification can help SAPS allocate patrols and resources to the most cri
 
 ---
 
-## 🖥️ Streamlit Dashboard
+##  Streamlit Dashboard
 An interactive dashboard (`app.py`) was built using **Streamlit** to display:
 
 - EDA visualizations (bar, pie, histogram)  
